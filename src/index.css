@@ -12,3 +12,52 @@ body{
     color: white;
     background-color: #111;
 }
+
+
+
+.moveX{
+    animation-name: moveAnimation;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+.moveLink{
+    opacity: 0;
+    transition: all ease 0.3s;
+}
+
+.link:hover .moveLink{
+    opacity: 1;
+}
+
+.behindText{
+   animation-name: moveAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+}
+.reverseText{
+     animation-name: revAnimation;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes moveAnimation {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+@keyframes revAnimation {
+    from{
+        transform: translateX(-100%);
+    }
+    to{
+        transform: translateX(0%);
+    }
+}

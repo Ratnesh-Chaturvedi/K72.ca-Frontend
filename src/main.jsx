@@ -4,6 +4,7 @@ import './index.css'
 import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import Stair from './components/common/Stair.jsx'
+import NavContext from './components/context/NavContext.jsx'
 
 
 createRoot(document.getElementById('root')).render(
@@ -12,7 +13,10 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
    
     <Stair>
+      <NavContext>
       <App />
+
+      </NavContext>
 
     </Stair>
     </BrowserRouter>

@@ -1,15 +1,21 @@
-import React, { useRef } from "react";
+import React, { useContext, useEffect, useRef } from "react";
+import { NavC } from "../context/NavContext";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Navbar = () => {
  const navbarHover=useRef(null)
  const line1=useRef(null)
  const line2=useRef(null)
+ const navClose=useRef(null)
 
+  
+ const [navOpen,setNavOpen]=useContext(NavC)
 
   return (
-    <div className="fixed z-20 w-full  ">
-      <div className="flex w-full  items-start justify-between">
-        <div className="p-3 w-36 ">
+    <div className="fixed z-50 w-full  ">
+      <div className="flex w-full  items-start justify-between ">
+        <div className="lg:p-3 lg:w-36 w-24 p-2">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 103 44">
             <path
               fill="white"
@@ -17,7 +23,7 @@ const Navbar = () => {
             ></path>
           </svg>
         </div>
-        <div 
+        <div  onClick={()=>setNavOpen(true)}
         onMouseEnter={()=>{
             navbarHover.current.style.height="100%";
             line1.current.style.backgroundColor="black"
@@ -26,13 +32,13 @@ const Navbar = () => {
         onMouseLeave={()=>{
             navbarHover.current.style.height="0%";
         }}
-        className="w-54 h-13 relative">
+        className="lg:w-54 lg:h-13 w-24 h-8 relative ">
             <div className="lines absolute z-40 right-[10%]  top-[30%] flex flex-col items-end justify-center gap-1">
-            <hr ref={line1} className="w-15 h-[5px] rounded"/>
-            <hr ref={line2} className="w-10 h-[5px] rounded" />
+            <hr ref={line1} className="lg:w-15 w-10 lg:h-[5px] h-[3px]  rounded"/>
+            <hr ref={line2} className="lg:w-10 w-6 lgh-[5px] h-[2px] rounded" />
             </div>
-        <div className="bg-black w-full h-full"></div>
-        <div ref={navbarHover} className="absolute  top-0 bg-yellow-300 w-full h-0 transition-all"></div>
+        <div   className="bg-black w-full h-full"></div>
+        <div  ref={navbarHover} className="absolute  top-0 bg-yellow-300 w-full h-0 transition-all"></div>
         </div>
       </div>
     </div>
