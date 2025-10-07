@@ -50,7 +50,7 @@ const pageRef=useRef(null)
       <div className="h-screen w-full flex ">
         <div className=" stair bg-black h-full w-1/5"></div>
         <div className=" stair bg-black h-full w-1/5"></div>
-        <div className=" stair bg-red-500 h-full w-1/5"></div>
+        <div className=" stair bg-black h-full w-1/5"></div>
         <div className=" stair bg-black h-full w-1/5"></div>
         <div className=" stair bg-black h-full w-1/5"></div>
       </div>
